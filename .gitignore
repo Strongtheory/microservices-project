@@ -1,6 +1,11 @@
 # compiled output
 /dist
+/gateway/node_modules
 /authentication/node_modules
+/user/node_modules
+/friend/node_modules
+/messaging/node_modules
+/point/node_modules
 
 # Logs
 logs
