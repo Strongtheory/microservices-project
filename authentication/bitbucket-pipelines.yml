@@ -1,0 +1,35 @@
+image:
+  name: 200222091894.dkr.ecr.ap-northeast-1.amazonaws.com/general/terraform-aws:1.0.0
+  aws:
+    access-key: $AWS_ACCESS_KEY_ID
+    secret-key: $AWS_SECRET_ACCESS_KEY
+
+pipelines:
+  branches:
+    '{develop,master}':
+      - step:
+          services:
+            - docker
+          caches:
+            - docker
+          script:
+            - export IMAGE_NAME=$DOCKER_REGISTRY:$BITBUCKET_BRANCH
+            - docker build -t $IMAGE_NAME .
+            - eval $(aws ecr get-login --no-include-email)
+            - docker push $IMAGE_NAME
+            - export UNTAGGED_IMAGES=$(aws ecr list-images --repository-name aripo/auth --filter "tagStatus=UNTAGGED" --query 'imageIds[*]' --output json)
+            - aws ecr batch-delete-image --repository-name aripo/auth --image-ids "$UNTAGGED_IMAGES" || true
+  tags:
+    '*':
+      - step:
+          services:
+            - docker
+          caches:
+            - docker
+          script:
+            - export IMAGE_NAME=$DOCKER_REGISTRY:$BITBUCKET_TAG
+            - docker build -t $IMAGE_NAME .
+            - eval $(aws ecr get-login --no-include-email)
+            - docker push $IMAGE_NAME
+            - export UNTAGGED_IMAGES=$(aws ecr list-images --repository-name aripo/auth --filter "tagStatus=UNTAGGED" --query 'imageIds[*]' --output json)
+            - aws ecr batch-delete-image --repository-name aripo/auth --image-ids "$UNTAGGED_IMAGES" || true

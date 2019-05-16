@@ -39,6 +39,15 @@
     optional "0.1.4"
     uuid "3.3.2"
 
+"@nestjs/microservices@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-6.2.0.tgz#589cf05b86955c8ec54d2bea8d53d71df72c836a"
+  integrity sha512-F4DNhF9qfKBL7v2toz4rlgfeuy8dVXslBNj0lFWDDjoANsYN5WYQVW5ygLbRkyb2ldlA/yBwfx/ULSBUHAvjZg==
+  dependencies:
+    iterare "1.1.2"
+    json-socket "0.3.0"
+    optional "0.1.4"
+
 "@nestjs/platform-express@^6.0.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.2.0.tgz#00553c1d762991e3ac238b66c20cf62a4ffa0f60"
@@ -1311,6 +1320,11 @@ dotenv@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
   integrity sha512-HygQCKUBSFl8wKQZBSemMywRWcEDNidvNbjGVyZu3nbZ8qq9ubiPoGLMdRDpfSrpkkm9BXYFkpKxxFX38o/76w==
+
+dotenv@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.0.0.tgz#ed310c165b4e8a97bb745b0a9d99c31bda566440"
+  integrity sha512-30xVGqjLjiUOArT4+M5q9sYdvuR4riM6yK9wMcas9Vbp6zZa+ocC9dp6QoftuhTPhFAiLK/0C5Ni2nou/Bk8lg==
 
 duplexer3@^0.1.4:
   version "0.1.4"
@@ -2979,6 +2993,11 @@ json-schema@0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/json-schema/-/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
   integrity sha1-tIDIkuWaLwWVTOcnvT8qTogvnhM=
+
+json-socket@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/json-socket/-/json-socket-0.3.0.tgz#f4b953c685bb8e8bd0b72438f5208d9a0799ae07"
+  integrity sha512-jc8ZbUnYIWdxERFWQKVgwSLkGSe+kyzvmYxwNaRgx/c8NNyuHes4UHnPM3LUrAFXUx1BhNJ94n1h/KCRlbvV0g==
 
 json-stringify-safe@~5.0.1:
   version "5.0.1"
